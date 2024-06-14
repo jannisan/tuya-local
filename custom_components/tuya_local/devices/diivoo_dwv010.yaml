@@ -57,7 +57,8 @@ secondary_entities:
         type: boolean
         name: valve
   - entity: sensor
-    name: cumulative water consumtion
+    class: volume
+    name: Cumulative water usage
     category: diagnostic
     dps:
       - id: 112
@@ -66,6 +67,7 @@ secondary_entities:
         unit: "l"
   - entity: sensor
     class: battery
+    name: Battery
     category: diagnostic
     dps:
       - id: 7
