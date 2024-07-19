@@ -35,6 +35,7 @@
 #right vlv working status: 126
 #right vlv single use time: 127
 
+#To control valve, set respective single use time first!
 
 name: Dual water timer
 products:
@@ -62,6 +63,15 @@ secondary_entities:
     category: diagnostic
     dps:
       - id: 112
+        type: integer
+        name: sensor
+        unit: "l"
+  - entity: sensor
+    class: volume
+    name: Daily water usage
+    category: diagnostic
+    dps:
+      - id: 6
         type: integer
         name: sensor
         unit: "l"
@@ -138,3 +148,47 @@ secondary_entities:
             value: "6 days"
           - dps_val: "7"
             value: "7 days"
+  - entity: number
+    name: Single use time 1
+    category: config
+    icon: "mdi:timer"
+    dps:
+      - id: 15
+        type: integer
+        name: value
+        unit: min
+        optional: true
+        range:
+          min: 0
+          max: 1440
+  - entity: number
+    name: Single use time 2
+    category: config
+    icon: "mdi:timer"
+    dps:
+      - id: 127
+        type: integer
+        name: value
+        unit: min
+        optional: true
+        range:
+          min: 0
+          max: 1440 
+  - entity: sensor
+    class: time
+    name: Remaining irrigation time 2
+    category: diagnostic
+    dps:
+      - id: 125
+        type: integer
+        name: sensor
+        unit: "s"
+  - entity: sensor
+    class: time
+    name: Remaining irrigation time 1
+    category: diagnostic
+    dps:
+      - id: 11
+        type: integer
+        name: sensor
+        unit: "s"
