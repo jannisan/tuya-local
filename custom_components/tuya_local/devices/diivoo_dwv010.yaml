@@ -45,7 +45,7 @@ secondary_entities:
       - id: 7
         type: integer
         name: sensor
-        unit: %
+        unit: "%"
   - entity: select
     name: Weather delay 1
     icon: "mdi:weather-cloudy-clock"
