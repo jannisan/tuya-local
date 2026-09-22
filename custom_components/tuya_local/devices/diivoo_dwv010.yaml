@@ -1,19 +1,21 @@
 name: Dual water timer
 products:
   - id: r6ya07uz
-    name: Diivoo DWV010
-primary_entity:
-  entity: valve
-  class: water
-  name: Valve 1
-  dps:
-    - id: 1
-      type: boolean
-      name: valve
-    - id: 12
-      type: string
-      name: operation
-secondary_entities:
+    manufacturer: Diivoo
+    model: DWV010
+
+entities:
+  - entity: valve
+    class: water
+    name: Valve 1
+    dps:
+      - id: 1
+        type: boolean
+        name: valve
+      - id: 12
+        type: string
+        name: operation
+
   - entity: valve
     class: water
     name: Valve 2
@@ -24,6 +26,7 @@ secondary_entities:
       - id: 126
         type: string
         name: operation
+
   - entity: sensor
     name: Water use
     class: volume
@@ -32,12 +35,13 @@ secondary_entities:
       - id: 112
         type: integer
         name: sensor
-        unit: l
+        unit: L
         class: total_increasing
       - id: 6
         type: integer
         name: daily
-        unit: l
+        unit: L
+
   - entity: sensor
     class: battery
     category: diagnostic
@@ -46,6 +50,7 @@ secondary_entities:
         type: integer
         name: sensor
         unit: "%"
+
   - entity: select
     name: Weather delay 1
     icon: "mdi:weather-cloudy-clock"
@@ -71,6 +76,7 @@ secondary_entities:
             value: "6 days"
           - dps_val: "7"
             value: "7 days"
+
   - entity: select
     name: Weather delay 2
     icon: "mdi:weather-cloudy-clock"
@@ -96,6 +102,7 @@ secondary_entities:
             value: "6 days"
           - dps_val: "7"
             value: "7 days"
+
   - entity: number
     name: Irrigation time 1
     category: config
@@ -109,6 +116,7 @@ secondary_entities:
         range:
           min: 0
           max: 1440
+
   - entity: number
     name: Irrigation time 2
     category: config
@@ -122,6 +130,7 @@ secondary_entities:
         range:
           min: 0
           max: 1440
+
   - entity: sensor
     class: duration
     name: Time remaining 1
@@ -130,7 +139,8 @@ secondary_entities:
       - id: 11
         type: integer
         name: sensor
-        unit: "s"
+        unit: s
+
   - entity: sensor
     class: duration
     name: Time remaining 2
@@ -139,4 +149,4 @@ secondary_entities:
       - id: 125
         type: integer
         name: sensor
-        unit: "s"
+        unit: s
